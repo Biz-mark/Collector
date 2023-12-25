@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+
+    group:
+        label: Группа
+        searchable: true
+        sortable: true
+
+    created_at:
+        label: Создано
+        type: datetime
+
+    is_read:
+        label: Прочитано
+        type: switch

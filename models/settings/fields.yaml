@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        notification[recipients]:
+            tab: Уведомления
+            type: repeater
+            span: auto
+            prompt: Добавить получателя
+            commentAbove: Электропочты, которые получат уведомление о новой записи.
+            form:
+                fields:
+                    email:
+                        label: Электропочта получателя
+                        placeholder: email@domain.tld
+
+        notification[response]:
+            tab: Уведомления
+            label: Отбивка отправителю
+            type: checkbox
+            span: auto
+            comment: Если включено, то если пользователь укажет свою электропочту, то ему придет письмо с уведомлением что его заявка получена.

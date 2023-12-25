@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        span: auto
+
+    created_at:
+        label: Создано
+        type: datepicker
+        span: auto
+
+    group:
+        label: Группа
+        span: auto
+
+    ip:
+        label: IP адрес
+        span: auto
+
+    properties:
+        label: Поля формы
+        type: partial
+        path: $/bizmark/collector/views/fields/properties.php
+

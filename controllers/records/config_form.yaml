@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Record
+
+# Model Form Field configuration
+form: $/bizmark/collector/models/record/fields.yaml
+
+# Model Class name
+modelClass: BizMark\Collector\Models\Record
+
+# Default redirect location
+defaultRedirect: bizmark/collector/records
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

@@ -1,0 +1,31 @@
+subject = "Collector :: new record created"
+==
+Record #{{ id }} – {{ group }}
+{% for label,value in data %}
+    {{ label|capitalize }}: {% if value is iterable %}{% for val in value %}{{ val|nl2br }}{% if not loop.last %}, {% endif %}{% endfor %}{% else %}{{ value|nl2br }}{% endif %}
+{% endfor %}
+==
+<h3>Record #{{ id }} – {{ group }}</h3>
+
+<table>
+    {% for label,value in data %}
+        <tr>
+            <td>{{ label|capitalize }}:</td>
+            <td>
+                {% if value is iterable %}
+                    {% for val in value %}
+                        {{ val|nl2br }}
+                        {% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {{ value|nl2br }}
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<div>
+    <p>IP: {{ ip }}</p>
+    <p>Time: {{ date }}</p>
+</div>
