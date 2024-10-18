@@ -47,8 +47,8 @@ class Plugin extends PluginBase
      */
     public function registerMailTemplates() {
         return [
-            'bizmark.collector::mail.notification' => 'Notification',
-            'bizmark.collector::mail.response' => 'User response',
+            'bizmark.collector::mail.notification',
+            'bizmark.collector::mail.response',
         ];
     }
 
