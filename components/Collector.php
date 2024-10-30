@@ -1,8 +1,9 @@
 <?php namespace BizMark\Collector\Components;
 
-use BizMark\Collector\Models\Record;
 use Cms\Classes\ComponentBase;
 use October\Rain\Exception\AjaxException;
+
+use BizMark\Collector\Models\Record;
 
 /**
  * Collector Component
@@ -45,7 +46,7 @@ class Collector extends ComponentBase
     /**
      * @throws AjaxException
      */
-    public function onSubmit()
+    public function onSubmit(): void
     {
         $ip = request()->ip();
         $properties = collect(request()->all());
@@ -61,5 +62,7 @@ class Collector extends ComponentBase
             trace_log($ex);
             throw new AjaxException(['X_OCTOBER_ERROR_MESSAGE' => $this->property('error_message')]);
         }
+
+        \Flash::success($this->property('success_message'));
     }
 }

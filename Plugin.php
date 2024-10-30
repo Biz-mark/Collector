@@ -45,10 +45,11 @@ class Plugin extends PluginBase
     /**
      * registerMailTemplates registers any mail templates implemented by this package.
      */
-    public function registerMailTemplates() {
+    public function registerMailTemplates()
+    {
         return [
-            'bizmark.collector::mail.notification',
-            'bizmark.collector::mail.response',
+            'bizmark.collector:notification' => 'bizmark.collector::mail.notification',
+            'bizmark.collector:response' => 'bizmark.collector::mail.response',
         ];
     }
 

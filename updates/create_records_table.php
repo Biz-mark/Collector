@@ -11,19 +11,17 @@ use October\Rain\Database\Updates\Migration;
  */
 return new class extends Migration
 {
-    const TABLE_NAME = 'bizmark_collector_records';
-
     /**
      * up builds the migration
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create(self::TABLE_NAME, function(Blueprint $table) {
+        Schema::create('bizmark_collector_records', function(Blueprint $table) {
             $table->id();
             $table->boolean('is_read')->default(0);
+            $table->string('ip')->nullable();
             $table->string('group')->nullable();
             $table->text('properties');
-            $table->string('ip')->nullable();
             $table->timestamps();
         });
     }
@@ -31,8 +29,8 @@ return new class extends Migration
     /**
      * down reverses the migration
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists(self::TABLE_NAME);
+        Schema::dropIfExists('bizmark_collector_records');
     }
 };
